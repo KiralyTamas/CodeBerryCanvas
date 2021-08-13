@@ -1,3 +1,4 @@
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
-context.fillRect(10, 10, 100, 100);
+context.fillStyle='orange';
+context.fillRect(100, 50, 100, 50);
