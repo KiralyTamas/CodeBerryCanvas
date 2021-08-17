@@ -7,11 +7,15 @@ body {
 	height: 100vh;
 }
 
-#a1,#a2,#a3,#a4 {
+.myCanvas {
 	display: block;
 	position: relative;
+	float: left;
 	width: 450px;
 	height: 300px;
 	border: 1px solid black;
 	margin: 5px 5px 5px 5px;
+}
+.myCanvas:nth-child(6){
+	background-color: rgb(255, 219, 206);
 }
