@@ -6,10 +6,12 @@ body {
 	width: 100vw;
 	height: 100vh;
 }
-#myCanvas {
+
+#a1,#a2,#a3,#a4 {
 	display: block;
 	position: relative;
 	width: 450px;
 	height: 300px;
 	border: 1px solid black;
+	margin: 5px 5px 5px 5px;
 }
