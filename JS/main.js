@@ -138,5 +138,6 @@ for (let boxesNumber = 5; boxesNumber > 0; boxesNumber--) {
         context.fill();
         spaceY += boxes + margin;
     }
-    spaceX += boxes + margin;
-}
+    spaceY -= (boxes + margin)*(boxesNumber-1);
+    spaceX += (boxes + margin);
+};
