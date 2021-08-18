@@ -86,11 +86,11 @@ var triangleStarty = 225;
 context.beginPath();
 context.moveTo(triangleStartx, triangleStarty);
 context.lineTo(triangleStartx + triangleStartx, triangleStarty);
-context.lineTo(triangleStartx+(triangleStarty-triangleStartx),triangleStarty-triangleStartx);
+context.lineTo(triangleStartx + (triangleStarty - triangleStartx), triangleStarty - triangleStartx);
 context.lineTo(triangleStartx, triangleStarty);
 context.strokeStyle = 'rgba(128,128,128,.5)';
 context.stroke();
-context.fillStyle='rgba(255,165,0,.5)';
+context.fillStyle = 'rgba(255,165,0,.5)';
 context.fill();
 var canvasa9 = document.getElementById('a9');
 var canvaswidth = document.getElementById('a9').clientWidth;
@@ -99,14 +99,14 @@ canvasa9.width = canvaswidth;
 canvasa9.height = canvasheight;
 var context = canvasa9.getContext('2d');
 context.beginPath();
-context.moveTo(canvaswidth/2,canvasheight*0);
-context.lineTo(canvaswidth/2,canvasheight);
-context.strokeStyle='green';
+context.moveTo(canvaswidth / 2, canvasheight * 0);
+context.lineTo(canvaswidth / 2, canvasheight);
+context.strokeStyle = 'green';
 context.stroke();
 context.beginPath();
-context.moveTo(canvaswidth*0,canvasheight/2);
-context.lineTo(canvaswidth,canvasheight/2);
-context.strokeStyle='red';
+context.moveTo(canvaswidth * 0, canvasheight / 2);
+context.lineTo(canvaswidth, canvasheight / 2);
+context.strokeStyle = 'red';
 context.stroke();
 var canvasa10 = document.getElementById('a10');
 var canvaswidth = document.getElementById('a10').clientWidth;
@@ -114,12 +114,12 @@ var canvasheight = document.getElementById('a10').clientHeight;
 canvasa10.width = canvaswidth;
 canvasa10.height = canvasheight;
 var context = canvasa10.getContext('2d');
-var startXY=20;
-var boxSize=45;
+var startXY = 20;
+var boxSize = 45;
 for (let boxNumber = 0; boxNumber < 10; boxNumber++) {
-context.fillStyle='rgba(255,165,0,.5)';
-context.fillRect(startXY,startXY,boxSize,boxSize);
-startXY+= boxSize/2;
+    context.fillStyle = 'rgba(255,165,0,.5)';
+    context.fillRect(startXY, startXY, boxSize, boxSize);
+    startXY += boxSize / 2;
 };
 var canvasa11 = document.getElementById('a11');
 var canvaswidth = document.getElementById('a11').clientWidth;
@@ -127,9 +127,16 @@ var canvasheight = document.getElementById('a11').clientHeight;
 canvasa11.width = canvaswidth;
 canvasa11.height = canvasheight;
 var context = canvasa11.getContext('2d');
-var boxes=50;
-var margin=5;
+var boxes = 50;
+var margin = 5;
+var spaceX = 15;
+var spaceY = 15;
 for (let boxesNumber = 5; boxesNumber > 0; boxesNumber--) {
-
-    
+    for (let littelBoxes = 0; littelBoxes < boxesNumber; littelBoxes++) {
+        context.fillStyle = 'rgba(255,165,0,.5)';
+        context.fillRect(spaceX, spaceY, boxes, boxes);
+        context.fill();
+        spaceY += boxes + margin;
+    }
+    spaceX += boxes + margin;
 }
