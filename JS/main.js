@@ -1,3 +1,5 @@
+/*A középső sárga kocka kódja*/
+
 var canvasa1 = document.getElementById('a1');
 var canvaswidth = document.getElementById('a1').clientWidth;
 var canvasheight = document.getElementById('a1').clientHeight;
@@ -6,6 +8,9 @@ canvasa1.height = canvasheight;
 var context = canvasa1.getContext('2d');
 context.fillStyle = 'orange';
 context.fillRect(175, 100, 100, 100);
+
+/*A piros átlós vonal kódja*/
+
 var canvasa2 = document.getElementById('a2');
 var canvaswidth = document.getElementById('a2').clientWidth;
 var canvasheight = document.getElementById('a2').clientHeight;
@@ -17,6 +22,9 @@ context.moveTo(canvaswidth * 0, canvasheight);
 context.lineTo(canvaswidth, canvasheight * 0);
 context.strokeStyle = 'red';
 context.stroke();
+
+/*A fekete negyed négyzet kódja*/
+
 var canvasa3 = document.getElementById('a3');
 var canvaswidth = document.getElementById('a3').clientWidth;
 var canvasheight = document.getElementById('a3').clientHeight;
@@ -26,6 +34,9 @@ var context = canvasa3.getContext('2d');
 context.beginPath();
 context.fillStyle = 'black';
 context.fillRect(canvasa1.width / 2, canvasa1.height / 2, canvasa1.width / 2, canvasa1.height / 2);
+
+/*A kicsi zöld négyzet kódja*/
+
 var canvasa4 = document.getElementById('a4');
 var canvaswidth = document.getElementById('a4').clientWidth;
 var canvasheight = document.getElementById('a4').clientHeight;
@@ -37,6 +48,9 @@ var padding = 10;
 context.beginPath();
 context.fillStyle = 'green';
 context.fillRect(canvasa1.width - (size + padding), canvasa1.height - (size + padding), size, size);
+
+/*Az egymásba érő két négyzet kódja*/
+
 var canvasa5 = document.getElementById('a5');
 var canvaswidth = document.getElementById('a5').clientWidth;
 var canvasheight = document.getElementById('a5').clientHeight;
@@ -47,6 +61,9 @@ context.fillStyle = 'rgba(255,0,0,.5)';
 context.fillRect((canvasa5.width / 2) - (padding * 2.5), (canvasa5.height / 2) - (padding * 2.5), size, size);
 context.fillStyle = 'rgba(0,0,255,.5)';
 context.fillRect((canvasa5.width / 2) - (padding * 7.5), (canvasa5.height / 2) - (padding * 7.5), size, size);
+
+/*A magyar zászló kódja*/
+
 var canvasa6 = document.getElementById('a6');
 var canvaswidth = document.getElementById('a6').clientWidth;
 var canvasheight = document.getElementById('a6').clientHeight;
@@ -59,6 +76,9 @@ context.fillStyle = 'white';
 context.fillRect(size, padding * 12.5, size * 2.5, size / 2)
 context.fillStyle = 'green';
 context.fillRect(size, padding * 17.5, size * 2.5, size / 2)
+
+/*A két átlós piros vonal kódja*/
+
 var canvasa7 = document.getElementById('a7');
 var canvaswidth = document.getElementById('a7').clientWidth;
 var canvasheight = document.getElementById('a7').clientHeight;
@@ -75,6 +95,9 @@ context.moveTo(canvaswidth, canvasheight);
 context.lineTo(canvaswidth * 0, canvasheight * 0);
 context.strokeStyle = 'red';
 context.stroke();
+
+/*A sárga háromszög és a szürke keret kódja */
+
 var canvasa8 = document.getElementById('a8');
 var canvaswidth = document.getElementById('a8').clientWidth;
 var canvasheight = document.getElementById('a8').clientHeight;
@@ -92,6 +115,9 @@ context.strokeStyle = 'rgba(128,128,128,.5)';
 context.stroke();
 context.fillStyle = 'rgba(255,165,0,.5)';
 context.fill();
+
+/*A zöld és piros kereszt kódja*/
+
 var canvasa9 = document.getElementById('a9');
 var canvaswidth = document.getElementById('a9').clientWidth;
 var canvasheight = document.getElementById('a9').clientHeight;
@@ -108,6 +134,9 @@ context.moveTo(canvaswidth * 0, canvasheight / 2);
 context.lineTo(canvaswidth, canvasheight / 2);
 context.strokeStyle = 'red';
 context.stroke();
+
+/*Az átlósan sorakozó sárga négyzetek kódja*/
+
 var canvasa10 = document.getElementById('a10');
 var canvaswidth = document.getElementById('a10').clientWidth;
 var canvasheight = document.getElementById('a10').clientHeight;
@@ -121,6 +150,9 @@ for (let boxNumber = 0; boxNumber < 10; boxNumber++) {
     context.fillRect(startXY, startXY, boxSize, boxSize);
     startXY += boxSize / 2;
 };
+
+/*A sárga lépcsőzetes négyzetek kódja*/
+
 var canvasa11 = document.getElementById('a11');
 var canvaswidth = document.getElementById('a11').clientWidth;
 var canvasheight = document.getElementById('a11').clientHeight;
