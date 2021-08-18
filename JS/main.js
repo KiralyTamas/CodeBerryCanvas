@@ -108,3 +108,28 @@ context.moveTo(canvaswidth*0,canvasheight/2);
 context.lineTo(canvaswidth,canvasheight/2);
 context.strokeStyle='red';
 context.stroke();
+var canvasa10 = document.getElementById('a10');
+var canvaswidth = document.getElementById('a10').clientWidth;
+var canvasheight = document.getElementById('a10').clientHeight;
+canvasa10.width = canvaswidth;
+canvasa10.height = canvasheight;
+var context = canvasa10.getContext('2d');
+var startXY=20;
+var boxSize=45;
+for (let boxNumber = 0; boxNumber < 10; boxNumber++) {
+context.fillStyle='rgba(255,165,0,.5)';
+context.fillRect(startXY,startXY,boxSize,boxSize);
+startXY+= boxSize/2;
+};
+var canvasa11 = document.getElementById('a11');
+var canvaswidth = document.getElementById('a11').clientWidth;
+var canvasheight = document.getElementById('a11').clientHeight;
+canvasa11.width = canvaswidth;
+canvasa11.height = canvasheight;
+var context = canvasa11.getContext('2d');
+var boxes=50;
+var margin=5;
+for (let boxesNumber = 5; boxesNumber > 0; boxesNumber--) {
+
+    
+}
