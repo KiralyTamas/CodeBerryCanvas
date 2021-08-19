@@ -170,6 +170,34 @@ for (let boxesNumber = 5; boxesNumber > 0; boxesNumber--) {
         context.fill();
         spaceY += boxes + margin;
     }
-    spaceY -= (boxes + margin)*(boxesNumber-1);
+    spaceY -= (boxes + margin) * (boxesNumber - 1);
     spaceX += (boxes + margin);
+};
+
+/*Szinváltós négyzetek kódja*/
+
+var canvasa12 = document.getElementById('a12');
+var canvaswidth = document.getElementById('a12').clientWidth;
+var canvasheight = document.getElementById('a12').clientHeight;
+canvasa12.width = canvaswidth;
+canvasa12.height = canvasheight;
+var context = canvasa12.getContext('2d');
+smallBoxSize = 30;
+startX=125;
+marginNumberX =startX ;
+marginNumberY = 50;
+paddingNumber = 5;
+var red=255;
+var green=79;
+var blue=120;
+for (let lineNumber = 0; lineNumber < 6; lineNumber++) {
+    for (let boxNumber = 0; boxNumber < 6; boxNumber++) {
+        context.fillStyle='rgb('+red+','+green+','+blue+')';
+        context.fillRect(marginNumberX,marginNumberY,smallBoxSize,smallBoxSize);
+        red-=7;
+        marginNumberX+=smallBoxSize+padding;
+    }
+    blue+=15;
+    marginNumberX=startX;
+    marginNumberY+=smallBoxSize+padding;
 };
