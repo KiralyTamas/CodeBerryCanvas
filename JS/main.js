@@ -183,21 +183,42 @@ canvasa12.width = canvaswidth;
 canvasa12.height = canvasheight;
 var context = canvasa12.getContext('2d');
 smallBoxSize = 30;
-startX=125;
-marginNumberX =startX ;
+startX = 125;
+marginNumberX = startX;
 marginNumberY = 50;
 paddingNumber = 5;
-var red=255;
-var green=79;
-var blue=120;
+var red = 255;
+var green = 79;
+var blue = 120;
 for (let lineNumber = 0; lineNumber < 6; lineNumber++) {
     for (let boxNumber = 0; boxNumber < 6; boxNumber++) {
-        context.fillStyle='rgb('+red+','+green+','+blue+')';
-        context.fillRect(marginNumberX,marginNumberY,smallBoxSize,smallBoxSize);
-        red-=7;
-        marginNumberX+=smallBoxSize+paddingNumber;
+        context.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
+        context.fillRect(marginNumberX, marginNumberY, smallBoxSize, smallBoxSize);
+        red -= 7;
+        marginNumberX += smallBoxSize + paddingNumber;
     }
-    blue+=15;
-    marginNumberX=startX;
-    marginNumberY+=smallBoxSize+paddingNumber;
+    blue += 15;
+    marginNumberX = startX;
+    marginNumberY += smallBoxSize + paddingNumber;
 };
+
+/*A háromszög-alagút kódja*/
+
+var canvasa13 = document.getElementById('a13');
+var canvaswidth = document.getElementById('a13').clientWidth;
+var canvasheight = document.getElementById('a13').clientHeight;
+canvasa13.width = canvaswidth;
+canvasa13.height = canvasheight;
+var context = canvasa13.getContext('2d');
+var triangleSX = 120;
+var foot = 100;
+for (let triangleNumber = 0; triangleNumber < 30; triangleNumber++) {
+    context.beginPath();
+    context.moveTo(triangleSX, triangleSX);
+    context.lineTo(triangleSX+foot, triangleSX);
+    context.lineTo(triangleSX+foot/2, triangleSX+foot-foot*2);
+    context.lineTo(triangleSX, triangleSX);
+    context.strokeStyle = 'grey';
+    context.stroke();
+    triangleSX+=5;
+}
