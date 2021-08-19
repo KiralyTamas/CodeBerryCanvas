@@ -195,9 +195,9 @@ for (let lineNumber = 0; lineNumber < 6; lineNumber++) {
         context.fillStyle='rgb('+red+','+green+','+blue+')';
         context.fillRect(marginNumberX,marginNumberY,smallBoxSize,smallBoxSize);
         red-=7;
-        marginNumberX+=smallBoxSize+padding;
+        marginNumberX+=smallBoxSize+paddingNumber;
     }
     blue+=15;
     marginNumberX=startX;
-    marginNumberY+=smallBoxSize+padding;
+    marginNumberY+=smallBoxSize+paddingNumber;
 };
