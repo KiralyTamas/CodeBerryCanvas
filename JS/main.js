@@ -303,3 +303,112 @@ for (let lineNumber = 0; lineNumber <= canvaswidth; lineNumber++) {
         }
     }
 }
+
+/*Dupla kékcsíkos háromszög kódja*/
+
+var canvasa17 = document.getElementById('a17');
+var canvaswidth = document.getElementById('a17').clientWidth;
+var canvasheight = document.getElementById('a17').clientHeight;
+canvasa17.width = canvaswidth;
+canvasa17.height = canvasheight;
+var context = canvasa17.getContext('2d');
+var rgbaBlue = 'rgba(0,0,255,.5)';
+for (let counterNumber = 0; counterNumber <= canvaswidth; counterNumber++) {
+    if (counterNumber % 4 === 0) {
+        context.beginPath();
+        context.moveTo(counterNumber, canvasheight / 2);
+        context.lineTo(canvaswidth - canvaswidth, canvasheight - canvasheight);
+        context.strokeStyle = rgbaBlue;
+        context.stroke();
+    } else if (counterNumber % 4 === 1) {
+        context.beginPath();
+        context.moveTo(counterNumber, canvasheight / 2);
+        context.lineTo(canvaswidth, canvasheight - canvasheight);
+        context.strokeStyle = rgbaBlue;
+        context.stroke();
+    } else if (counterNumber % 4 === 2) {
+        context.beginPath();
+        context.moveTo(counterNumber, canvasheight / 2);
+        context.lineTo(canvaswidth - canvaswidth, canvasheight);
+        context.strokeStyle = rgbaBlue;
+        context.stroke();
+    } else if (counterNumber % 4 === 3) {
+        context.beginPath();
+        context.moveTo(counterNumber, canvasheight / 2);
+        context.lineTo(canvaswidth, canvasheight);
+        context.strokeStyle = rgbaBlue;
+        context.stroke();
+    }
+}
+
+/*3 darab háromszög kódja*/
+
+var canvasa18 = document.getElementById('a18');
+var canvaswidth = document.getElementById('a18').clientWidth;
+var canvasheight = document.getElementById('a18').clientHeight;
+canvasa18.width = canvaswidth;
+canvasa18.height = canvasheight;
+var context = canvasa18.getContext('2d');
+var rgbaS = 'rgba(0,0,0,.5)';
+var rgbaF = 'rgba(255,165,0,.5)';
+function triangle(positionX, positionY, size) {
+    context.beginPath();
+    context.moveTo(positionX, positionY);
+    context.lineTo(positionX - size / 2, positionY + size);
+    context.lineTo(positionX + size / 2, positionY + size);
+    context.lineTo(positionX, positionY);
+    context.strokeStyle = rgbaS;
+    context.stroke();
+    context.fillStyle = rgbaF;
+    context.fill();
+}
+triangle(230, 160, 50);
+triangle(270, 100, 50);
+triangle(200, 50, 150);
+
+/*3 rózsaszín csillag kódja*/
+
+var canvasa19 = document.getElementById('a19');
+var canvaswidth = document.getElementById('a19').clientWidth;
+var canvasheight = document.getElementById('a19').clientHeight;
+canvasa19.width = canvaswidth;
+canvasa19.height = canvasheight;
+var context = canvasa19.getContext('2d');
+var rgbStar = 'rgb(233,159,184)';
+function star(positionX, positionY, size) {
+    context.beginPath();
+    context.moveTo(positionX, positionY);
+    context.lineTo(positionX + size, positionY);
+    context.lineTo(positionX + size * 0.15, positionY + size * 0.5);
+    context.lineTo(positionX + size * 0.5, positionY - size * 0.4);
+    context.lineTo(positionX + size * 0.85, positionY + size * 0.5);
+    context.strokeStyle = rgbStar;
+    context.stroke();
+    context.fillStyle = rgbStar;
+    context.fill();
+}
+star(40, 50, 75);
+star(130, 120, 100);
+star(250, 220, 150);
+
+/*1000 véletlenszerű vonal kódja*/
+
+var canvasa20 = document.getElementById('a20');
+var canvaswidth = document.getElementById('a20').clientWidth;
+var canvasheight = document.getElementById('a20').clientHeight;
+canvasa20.width = canvaswidth;
+canvasa20.height = canvasheight;
+var context = canvasa20.getContext('2d');
+function lineToCenter(positionX, positionY, color) {
+    context.beginPath();
+    context.moveTo(positionX, positionY)
+    context.lineTo(canvaswidth * 0.5, canvasheight * 0.5)
+    context.strokeStyle=color;
+    context.stroke();
+}
+function random(max, min) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+for (let lineCenterNumber = 1; lineCenterNumber <= 1000; lineCenterNumber++) {
+    lineToCenter(random(canvaswidth,0),random(canvasheight,0),'teal')
+}

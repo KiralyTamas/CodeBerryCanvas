@@ -19,7 +19,7 @@ body {
 .myCanvas:nth-child(6){
 	background-color: rgba(255, 219, 206,.5);
 }
-#a9, #a14,#a16{
+#a9, #a14,#a16,#a17,#a20{
 	width: 450px;
 	height: 350px;
 }
