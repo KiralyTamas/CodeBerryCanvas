@@ -215,10 +215,91 @@ var foot = 100;
 for (let triangleNumber = 0; triangleNumber < 30; triangleNumber++) {
     context.beginPath();
     context.moveTo(triangleSX, triangleSX);
-    context.lineTo(triangleSX+foot, triangleSX);
-    context.lineTo(triangleSX+foot/2, triangleSX+foot-foot*2);
+    context.lineTo(triangleSX + foot, triangleSX);
+    context.lineTo(triangleSX + foot / 2, triangleSX + foot - foot * 2);
     context.lineTo(triangleSX, triangleSX);
     context.strokeStyle = 'grey';
     context.stroke();
-    triangleSX+=5;
+    triangleSX += 5;
+}
+
+/*Szivárvány-négyzetek kódja*/
+
+var canvasa14 = document.getElementById('a14');
+var canvaswidth = document.getElementById('a14').clientWidth;
+var canvasheight = document.getElementById('a14').clientHeight;
+canvasa14.width = canvaswidth;
+canvasa14.height = canvasheight;
+var context = canvasa14.getContext('2d');
+var rainbowStart = 0;
+var rainbowX = 450;
+var rainbowY = 350;
+var hue = 360;
+for (let rainbowNumber = 0; rainbowNumber < 17; rainbowNumber++) {
+    context.fillStyle = 'hsl(' + hue + ',60%,45%)';
+    context.fillRect(rainbowStart, rainbowStart, rainbowX, rainbowY);
+    rainbowStart += 10;
+    rainbowX -= 20;
+    rainbowY -= 20;
+    hue -= hue / 17;
+}
+
+/*Szines négyzetek kódja feltételekkel*/
+
+var canvasa15 = document.getElementById('a15');
+var canvaswidth = document.getElementById('a15').clientWidth;
+var canvasheight = document.getElementById('a15').clientHeight;
+canvasa15.width = canvaswidth;
+canvasa15.height = canvasheight;
+var context = canvasa15.getContext('2d');
+var boxesSize = 50;
+var startX = 20;
+var startY = 15;
+var if3 = 'rgba(0,0,255,.5)';
+var if5 = 'rgba(255,255,0,.5)';
+var if35 = 'rgba(0,255,0,.5)';
+var if0 = 'rgba(0,0,0,.5)';
+for (var colorBoxes = 1; colorBoxes <= 15; colorBoxes++) {
+    if ((colorBoxes % 3 + colorBoxes % 5) === 0) {
+        context.fillStyle = if35;
+    } else if (colorBoxes % 5 === 0) {
+        context.fillStyle = if5;
+    } else if (colorBoxes % 3 === 0) {
+        context.fillStyle = if3;
+    } else {
+        context.fillStyle = if0;
+    }
+    context.fillRect(startX * colorBoxes, startY * colorBoxes, boxesSize, boxesSize);
+};
+
+/*Piros csíkos négyzet kódja*/
+
+var canvasa16 = document.getElementById('a16');
+var canvaswidth = document.getElementById('a16').clientWidth;
+var canvasheight = document.getElementById('a16').clientHeight;
+canvasa16.width = canvaswidth;
+canvasa16.height = canvasheight;
+var context = canvasa16.getContext('2d');
+var middleY = canvasheight / 2;
+var endUpX = canvaswidth / 2;
+var endUpY = 0;
+var endDownX = canvaswidth / 2;
+var endDownY = canvasheight;
+var rgba = 'rgba(255,0,0,.5)';
+for (let lineNumber = 0; lineNumber <= canvaswidth; lineNumber++) {
+    if (lineNumber % 3 === 0) {
+        if (lineNumber % 2 == 0) {
+            context.beginPath();
+            context.moveTo(lineNumber, middleY);
+            context.lineTo(endUpX, endUpY);
+            context.strokeStyle = rgba;
+            context.stroke();
+        } else {
+            context.beginPath();
+            context.moveTo(lineNumber, middleY);
+            context.lineTo(endDownX, endDownY);
+            context.strokeStyle = rgba;
+            context.stroke();
+        }
+    }
 }
