@@ -473,3 +473,35 @@ function drawCheckeredPattern(row, col) {
 }
 drawCheckeredPattern(8, 8);
 
+/*6 háromszög kódja*/
+
+var canvasa23 = document.getElementById('a23');
+var canvaswidth = document.getElementById('a23').clientWidth;
+var canvasheight = document.getElementById('a23').clientHeight;
+canvasa23.width = canvaswidth;
+canvasa23.height = canvasheight;
+var context = canvasa23.getContext('2d');
+var tWidth = 100;
+var tHeight = 86.6;
+for (let triangleLine = 1; triangleLine <= 3; triangleLine++) {
+    function drawTriangle(positionX, positionY) {
+        if (triangleLine = 1) {
+            context.fillStyle = 'rgb(227,98,102)';
+            context.strokeStyle = 'rgb(227,98,102)';
+        }else if (triangleLine=2) {
+            context.fillStyle = 'rgb(38,172,73)';
+            context.strokeStyle = 'rgb(38,172,73)';
+            
+        }
+        context.beginPath();
+        context.moveTo(positionX, positionY);
+        context.lineTo(positionX + tWidth * 0.5, positionY + tHeight);
+        context.lineTo(positionX - tWidth * 0.5, positionY + tHeight);
+        context.lineTo(positionX, positionY);
+        context.stroke();
+        context.fill();
+    }
+
+}
+
+drawTriangle(225, 33);
