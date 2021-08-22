@@ -403,12 +403,47 @@ function lineToCenter(positionX, positionY, color) {
     context.beginPath();
     context.moveTo(positionX, positionY)
     context.lineTo(canvaswidth * 0.5, canvasheight * 0.5)
-    context.strokeStyle=color;
+    context.strokeStyle = color;
     context.stroke();
 }
 function random(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 for (let lineCenterNumber = 1; lineCenterNumber <= 1000; lineCenterNumber++) {
-    lineToCenter(random(canvaswidth,0),random(canvasheight,0),'teal')
+    lineToCenter(random(canvaswidth, 0), random(canvasheight, 0), 'teal')
 }
+
+/*Méh-sejtek kódja*/
+
+var canvasa21 = document.getElementById('a21');
+var canvaswidth = document.getElementById('a21').clientWidth;
+var canvasheight = document.getElementById('a21').clientHeight;
+canvasa21.width = canvaswidth;
+canvasa21.height = canvasheight;
+var context = canvasa21.getContext('2d');
+var totalwidth = 113;
+var totalheight = 98;
+    function drawHexagon(positionX, positionY) {
+        context.beginPath();
+        context.moveTo(positionX, positionY);
+        context.lineTo(positionX + (totalwidth * 0.25), positionY - (totalheight * 0.5));
+        context.lineTo(positionX + (totalwidth * 0.75), positionY - (totalheight * 0.5));
+        context.lineTo(positionX + totalwidth, positionY);
+        context.lineTo(positionX + (totalwidth * 0.75), positionY + (totalheight * 0.5));
+        context.lineTo(positionX + (totalwidth * 0.25), positionY + (totalheight * 0.5));
+        context.lineTo(positionX, positionY);
+        context.strokeStyle = 'orange';
+        context.stroke();
+        if (positionX === 261&positionY===230) {
+            context.fillStyle = 'orange';
+            context.fill();
+        }
+    }
+
+drawHexagon(76, 120);
+drawHexagon(76, 230);
+drawHexagon(168.5, 65);
+drawHexagon(168.5, 175);
+drawHexagon(168.5, 285);
+drawHexagon(261, 120);
+drawHexagon(261, 230);

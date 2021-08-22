@@ -16,10 +16,15 @@ body {
 	border: 1px solid black;
 	margin: 5px 5px 5px 5px;
 }
-.myCanvas:nth-child(6){
-	background-color: rgba(255, 219, 206,.5);
+.myCanvas:nth-child(6) {
+	background-color: rgba(255, 219, 206, 0.5);
 }
-#a9, #a14,#a16,#a17,#a20{
+#a9,
+#a14,
+#a16,
+#a17,
+#a20,
+#a21 {
 	width: 450px;
 	height: 350px;
 }
