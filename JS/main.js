@@ -483,25 +483,23 @@ canvasa23.height = canvasheight;
 var context = canvasa23.getContext('2d');
 var tWidth = 100;
 var tHeight = 86.6;
-for (let triangleLine = 1; triangleLine <= 3; triangleLine++) {
+var triangleColor = 'rgb(227,98,102)';
+var triangleGreen = 'rgb(38,172,73)';
+var triangleDGreen = 'rgb(34,128,128)';
+for (let triangleLine = 1; triangleLine <= 6; triangleLine++) {
+    if (triangleLine>1) {
+        triangleColor = triangleGreen;
+    }
     function drawTriangle(positionX, positionY) {
-        if (triangleLine = 1) {
-            context.fillStyle = 'rgb(227,98,102)';
-            context.strokeStyle = 'rgb(227,98,102)';
-        }else if (triangleLine=2) {
-            context.fillStyle = 'rgb(38,172,73)';
-            context.strokeStyle = 'rgb(38,172,73)';
-            
-        }
         context.beginPath();
         context.moveTo(positionX, positionY);
         context.lineTo(positionX + tWidth * 0.5, positionY + tHeight);
         context.lineTo(positionX - tWidth * 0.5, positionY + tHeight);
         context.lineTo(positionX, positionY);
+        context.strokeStyle = triangleColor;
         context.stroke();
+        context.fillStyle = triangleColor;
         context.fill();
     }
-
 }
-
 drawTriangle(225, 33);
