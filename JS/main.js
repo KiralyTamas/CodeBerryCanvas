@@ -31,7 +31,6 @@ var canvasheight = document.getElementById('a3').clientHeight;
 canvasa3.width = canvaswidth;
 canvasa3.height = canvasheight;
 var context = canvasa3.getContext('2d');
-context.beginPath();
 context.fillStyle = 'black';
 context.fillRect(canvasa1.width / 2, canvasa1.height / 2, canvasa1.width / 2, canvasa1.height / 2);
 
@@ -423,22 +422,22 @@ canvasa21.height = canvasheight;
 var context = canvasa21.getContext('2d');
 var totalwidth = 113;
 var totalheight = 98;
-    function drawHexagon(positionX, positionY) {
-        context.beginPath();
-        context.moveTo(positionX, positionY);
-        context.lineTo(positionX + (totalwidth * 0.25), positionY - (totalheight * 0.5));
-        context.lineTo(positionX + (totalwidth * 0.75), positionY - (totalheight * 0.5));
-        context.lineTo(positionX + totalwidth, positionY);
-        context.lineTo(positionX + (totalwidth * 0.75), positionY + (totalheight * 0.5));
-        context.lineTo(positionX + (totalwidth * 0.25), positionY + (totalheight * 0.5));
-        context.lineTo(positionX, positionY);
-        context.strokeStyle = 'orange';
-        context.stroke();
-        if (positionX === 261&positionY===230) {
-            context.fillStyle = 'orange';
-            context.fill();
-        }
+function drawHexagon(positionX, positionY) {
+    context.beginPath();
+    context.moveTo(positionX, positionY);
+    context.lineTo(positionX + (totalwidth * 0.25), positionY - (totalheight * 0.5));
+    context.lineTo(positionX + (totalwidth * 0.75), positionY - (totalheight * 0.5));
+    context.lineTo(positionX + totalwidth, positionY);
+    context.lineTo(positionX + (totalwidth * 0.75), positionY + (totalheight * 0.5));
+    context.lineTo(positionX + (totalwidth * 0.25), positionY + (totalheight * 0.5));
+    context.lineTo(positionX, positionY);
+    context.strokeStyle = 'orange';
+    context.stroke();
+    if (positionX === 261 & positionY === 230) {
+        context.fillStyle = 'orange';
+        context.fill();
     }
+}
 
 drawHexagon(76, 120);
 drawHexagon(76, 230);
@@ -447,3 +446,30 @@ drawHexagon(168.5, 175);
 drawHexagon(168.5, 285);
 drawHexagon(261, 120);
 drawHexagon(261, 230);
+
+/*A sakktábla kódja*/
+
+var canvasa22 = document.getElementById('a22');
+var canvaswidth = document.getElementById('a22').clientWidth;
+var canvasheight = document.getElementById('a22').clientHeight;
+canvasa22.width = canvaswidth;
+canvasa22.height = canvasheight;
+var context = canvasa22.getContext('2d');
+var chessStartX = canvaswidth - canvaswidth;
+var chessStartY = canvasheight - canvasheight;
+function drawCheckeredPattern(row, col) {
+    for (let colNumber = 1; colNumber <= 8; colNumber++) {
+        for (let rowNumber = 1; rowNumber <= 8; rowNumber++) {
+            context.fillStyle = 'black';
+            if ((rowNumber + colNumber) % 2 === 0) {
+                context.fillStyle = 'white';
+            }
+            context.fillRect(chessStartX, chessStartY, canvaswidth / row, canvasheight / col);
+            chessStartX += canvaswidth / row;
+        }
+        chessStartY = (canvasheight / col) * colNumber;
+        chessStartX = canvaswidth - canvaswidth;
+    }
+}
+drawCheckeredPattern(8, 8);
+
