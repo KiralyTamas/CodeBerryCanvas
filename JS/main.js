@@ -486,20 +486,30 @@ var tHeight = 86.6;
 var triangleColor = 'rgb(227,98,102)';
 var triangleGreen = 'rgb(38,172,73)';
 var triangleDGreen = 'rgb(34,128,128)';
-for (let triangleLine = 1; triangleLine <= 6; triangleLine++) {
-    if (triangleLine>1) {
-        triangleColor = triangleGreen;
-    }
-    function drawTriangle(positionX, positionY) {
-        context.beginPath();
-        context.moveTo(positionX, positionY);
-        context.lineTo(positionX + tWidth * 0.5, positionY + tHeight);
-        context.lineTo(positionX - tWidth * 0.5, positionY + tHeight);
-        context.lineTo(positionX, positionY);
-        context.strokeStyle = triangleColor;
-        context.stroke();
-        context.fillStyle = triangleColor;
-        context.fill();
+for (let colTriangle = 1; colTriangle <= 3; colTriangle++) {
+    for (let rowTriangle = 1; rowTriangle <= colTriangle; rowTriangle++) {
+        function drawTriangle(positionX, positionY) {
+            context.beginPath();
+            context.moveTo(positionX-((tWidth*0.5)*colTriangle),positionY+tHeight*colTriangle);
+            context.lineTo(positionX + tWidth * 0.5, positionY + tHeight);
+            context.lineTo(positionX - tWidth * 0.5, positionY + tHeight);
+            context.lineTo(positionX, positionY);
+
+            if (colTriangle===1) {
+                context.strokeStyle = 'rgb(227,98,102)';
+                context.fillStyle = 'rgb(227,98,102)'; 
+            }else if (colTriangle===2) {
+                context.strokeStyle = 'rgb(38,172,73)';
+                context.fillStyle = 'rgb(38,172,73)';
+            }else{
+                context.strokeStyle = 'rgb(34,128,128)';
+                context.fillStyle = 'rgb(34,128,128)';
+            }
+            context.stroke();
+            context.fill();
+
+        }
+
     }
 }
 drawTriangle(225, 33);
