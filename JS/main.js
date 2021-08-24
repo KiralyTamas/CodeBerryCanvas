@@ -491,7 +491,7 @@ for (let colTriangle = 0; colTriangle <= 2; colTriangle++) {
     for (let rowTriangle = 0; rowTriangle <= colTriangle; rowTriangle++) {
             context.beginPath();
             context.moveTo(positionX-((tWidth/2)*colTriangle)+(tWidth*rowTriangle),positionY+(tHeight*colTriangle));
-            context.lineTo(450, 350);
+            context.lineTo(positionX-tWidth/2*rowTriangle+((tWidth/2)*rowTriangle), positionY);
             /*context.lineTo(positionX - tWidth * 0.5, positionY + tHeight);
             context.lineTo(positionX, positionY);*/
 
