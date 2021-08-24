@@ -481,24 +481,23 @@ var canvasheight = document.getElementById('a23').clientHeight;
 canvasa23.width = canvaswidth;
 canvasa23.height = canvasheight;
 var context = canvasa23.getContext('2d');
-var tWidth = 100;
-var tHeight = 86.6;
+var base = 100;
+var altitude = 86.6;
 var triangleColor = 'rgb(227,98,102)';
 var triangleGreen = 'rgb(38,172,73)';
 var triangleDGreen = 'rgb(34,128,128)';
 function drawTriangle(positionX, positionY) {
-for (let colTriangle = 0; colTriangle <= 2; colTriangle++) {
-    for (let rowTriangle = 0; rowTriangle <= colTriangle; rowTriangle++) {
-            context.beginPath();
-            context.moveTo(positionX-((tWidth/2)*colTriangle)+(tWidth*rowTriangle),positionY+(tHeight*colTriangle));
-            context.lineTo(positionX-tWidth/2*rowTriangle+((tWidth/2)*rowTriangle), positionY);
-            /*context.lineTo(positionX - tWidth * 0.5, positionY + tHeight);
-            context.lineTo(positionX, positionY);*/
-
-            if (colTriangle==0) {
+for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
+    for (let triangleCounter = 0; triangleCounter <= rowCounter; triangleCounter++) {
+        context.beginPath();
+        context.moveTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
+        context.lineTo(positionX - (rowCounter + 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
+        context.lineTo(positionX - (rowCounter - 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
+        context.lineTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
+            if (rowCounter==0) {
                 context.strokeStyle = 'rgb(227,98,102)';
                 context.fillStyle = 'rgb(227,98,102)'; 
-            }else if (colTriangle==1) {
+            }else if (rowCounter==1) {
                 context.strokeStyle = 'rgb(38,172,73)';
                 context.fillStyle = 'rgb(38,172,73)';
             }else{
@@ -506,7 +505,7 @@ for (let colTriangle = 0; colTriangle <= 2; colTriangle++) {
                 context.fillStyle = 'rgb(34,128,128)';
             }
             context.stroke();
-            /*context.fill();*/
+            context.fill();
 
         }
 
