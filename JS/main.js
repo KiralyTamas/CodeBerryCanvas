@@ -486,19 +486,19 @@ var tHeight = 86.6;
 var triangleColor = 'rgb(227,98,102)';
 var triangleGreen = 'rgb(38,172,73)';
 var triangleDGreen = 'rgb(34,128,128)';
-for (let colTriangle = 1; colTriangle <= 3; colTriangle++) {
-    for (let rowTriangle = 1; rowTriangle <= colTriangle; rowTriangle++) {
-        function drawTriangle(positionX, positionY) {
+function drawTriangle(positionX, positionY) {
+for (let colTriangle = 0; colTriangle <= 2; colTriangle++) {
+    for (let rowTriangle = 0; rowTriangle <= colTriangle; rowTriangle++) {
             context.beginPath();
-            context.moveTo(positionX-((tWidth*0.5)*colTriangle),positionY+tHeight*colTriangle);
-            context.lineTo(positionX + tWidth * 0.5, positionY + tHeight);
-            context.lineTo(positionX - tWidth * 0.5, positionY + tHeight);
-            context.lineTo(positionX, positionY);
+            context.moveTo(positionX-((tWidth/2)*colTriangle)+(tWidth*rowTriangle),positionY+(tHeight*colTriangle));
+            context.lineTo(450, 350);
+            /*context.lineTo(positionX - tWidth * 0.5, positionY + tHeight);
+            context.lineTo(positionX, positionY);*/
 
-            if (colTriangle===1) {
+            if (colTriangle==0) {
                 context.strokeStyle = 'rgb(227,98,102)';
                 context.fillStyle = 'rgb(227,98,102)'; 
-            }else if (colTriangle===2) {
+            }else if (colTriangle==1) {
                 context.strokeStyle = 'rgb(38,172,73)';
                 context.fillStyle = 'rgb(38,172,73)';
             }else{
@@ -506,7 +506,7 @@ for (let colTriangle = 1; colTriangle <= 3; colTriangle++) {
                 context.fillStyle = 'rgb(34,128,128)';
             }
             context.stroke();
-            context.fill();
+            /*context.fill();*/
 
         }
 
