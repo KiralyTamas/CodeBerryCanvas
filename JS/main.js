@@ -487,14 +487,14 @@ var triangleColor = 'rgb(227,98,102)';
 var triangleGreen = 'rgb(38,172,73)';
 var triangleDGreen = 'rgb(34,128,128)';
 function drawTriangle(positionX, positionY) {
-    for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
-        for (let triangleCounter = 0; triangleCounter <= rowCounter; triangleCounter++) {
-            context.beginPath();
-            context.moveTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
-            context.lineTo(positionX - (rowCounter + 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
-            context.lineTo(positionX - (rowCounter - 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
-            context.lineTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
-            if (rowCounter == 0) {
+for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
+    for (let colCounter = 0; colCounter <= rowCounter; colCounter++) {
+        context.beginPath();
+        context.moveTo(positionX-rowCounter*base/2+colCounter*base,positionY+rowCounter*altitude);
+        context.lineTo(positionX-(rowCounter+1)*base/2+colCounter*base+base,positionY+rowCounter*altitude+altitude);
+        context.lineTo(positionX-(rowCounter+1)*base/2+colCounter*base,positionY+rowCounter*altitude+altitude);
+        context.lineTo(positionX-rowCounter*base/2+colCounter*base,positionY+rowCounter*altitude);
+            if (rowCounter==0) {
                 context.strokeStyle = 'rgb(227,98,102)';
                 context.fillStyle = 'rgb(227,98,102)';
             } else if (rowCounter == 1) {
