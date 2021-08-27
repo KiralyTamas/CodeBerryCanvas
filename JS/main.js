@@ -487,20 +487,20 @@ var triangleColor = 'rgb(227,98,102)';
 var triangleGreen = 'rgb(38,172,73)';
 var triangleDGreen = 'rgb(34,128,128)';
 function drawTriangle(positionX, positionY) {
-for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
-    for (let triangleCounter = 0; triangleCounter <= rowCounter; triangleCounter++) {
-        context.beginPath();
-        context.moveTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
-        context.lineTo(positionX - (rowCounter + 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
-        context.lineTo(positionX - (rowCounter - 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
-        context.lineTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
-            if (rowCounter==0) {
+    for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
+        for (let triangleCounter = 0; triangleCounter <= rowCounter; triangleCounter++) {
+            context.beginPath();
+            context.moveTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
+            context.lineTo(positionX - (rowCounter + 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
+            context.lineTo(positionX - (rowCounter - 1) * base / 2 + triangleCounter * base, positionY + (rowCounter + 1) * altitude);
+            context.lineTo(positionX - rowCounter * base / 2 + triangleCounter * base, positionY + rowCounter * altitude);
+            if (rowCounter == 0) {
                 context.strokeStyle = 'rgb(227,98,102)';
-                context.fillStyle = 'rgb(227,98,102)'; 
-            }else if (rowCounter==1) {
+                context.fillStyle = 'rgb(227,98,102)';
+            } else if (rowCounter == 1) {
                 context.strokeStyle = 'rgb(38,172,73)';
                 context.fillStyle = 'rgb(38,172,73)';
-            }else{
+            } else {
                 context.strokeStyle = 'rgb(34,128,128)';
                 context.fillStyle = 'rgb(34,128,128)';
             }
@@ -512,3 +512,22 @@ for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
     }
 }
 drawTriangle(225, 33);
+
+function logUntilSmall(array) {
+    const condition=" pozitiv";
+    const error=" megállította a logolást";
+    let i,message;
+    for (i = 0; i < array.length && array[i] > 0; i++) {
+        console.log(array[i] + condition);
+    }
+    if (i === array.length) {
+        message = "minden elem"+condition;
+    } else {
+        message = array[i] + error;
+    }
+    console.log(message);
+}
+const testArray=[1,3,4,7,10,11,2];
+logUntilSmall(testArray);
+testArray.push(-1);
+logUntilSmall(testArray);

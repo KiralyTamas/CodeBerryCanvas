@@ -6,8 +6,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 }
-
-.myCanvas {
+.myCanvas,#pozitiv {
 	display: block;
 	position: relative;
 	float: left;
@@ -29,4 +28,11 @@ body {
 #a23 {
 	width: 450px;
 	height: 350px;
+}
+#pozitiv{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	font-size: xx-large;
 }
