@@ -535,10 +535,10 @@ testArray.push(-1);
 logUntilSmall(testArray);
 
 /*pozitív-negatív logikai vizsgálat kódja*/
-
+(function(){
 function isPositive(number) {
     var condition = "positive";
-    var fail = "No!";
+    var fail = "Elbasztad";
     var message;
     if (number > 0) {
         message = "Yes, it's " + condition;
@@ -552,6 +552,35 @@ var test = 10;
 isPositive(test);
 test = -10;
 isPositive(test);
+})();
 
-console.log('Hello, a nevem ', myName);
-let myName = "Berry";
+/*Fügvény refaktorálás kódja*/
+(function(){
+var test;
+function isPositive(number) {
+    var condition = "positive";
+    var message;
+    var fail = "No!";
+    if (number > 0) {
+        message = "Yes, it's " + condition;
+    }
+    if (number < 0) {
+        message = fail;
+    }
+    console.log(message);
+}
+test = 10;
+isPositive(test);
+test = -10;
+isPositive(test);
+})();
+
+var greet = (function (){
+    var greeting = "Hello ";
+    function greetWithExcitement (name) {
+      var excitement = "!!!";
+      console.log(greeting + name + excitement);
+    }
+    return greetWithExcitement;
+  })();
+  greet("Berry"); // kiírja, hogy "Hello Berry!!!"
