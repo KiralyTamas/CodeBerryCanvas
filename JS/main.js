@@ -487,14 +487,14 @@ var triangleColor = 'rgb(227,98,102)';
 var triangleGreen = 'rgb(38,172,73)';
 var triangleDGreen = 'rgb(34,128,128)';
 function drawTriangle(positionX, positionY) {
-for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
-    for (let colCounter = 0; colCounter <= rowCounter; colCounter++) {
-        context.beginPath();
-        context.moveTo(positionX-rowCounter*base/2+colCounter*base,positionY+rowCounter*altitude);
-        context.lineTo(positionX-(rowCounter+1)*base/2+colCounter*base+base,positionY+rowCounter*altitude+altitude);
-        context.lineTo(positionX-(rowCounter+1)*base/2+colCounter*base,positionY+rowCounter*altitude+altitude);
-        context.lineTo(positionX-rowCounter*base/2+colCounter*base,positionY+rowCounter*altitude);
-            if (rowCounter==0) {
+    for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
+        for (let colCounter = 0; colCounter <= rowCounter; colCounter++) {
+            context.beginPath();
+            context.moveTo(positionX - rowCounter * base / 2 + colCounter * base, positionY + rowCounter * altitude);
+            context.lineTo(positionX - (rowCounter + 1) * base / 2 + colCounter * base + base, positionY + rowCounter * altitude + altitude);
+            context.lineTo(positionX - (rowCounter + 1) * base / 2 + colCounter * base, positionY + rowCounter * altitude + altitude);
+            context.lineTo(positionX - rowCounter * base / 2 + colCounter * base, positionY + rowCounter * altitude);
+            if (rowCounter == 0) {
                 context.strokeStyle = 'rgb(227,98,102)';
                 context.fillStyle = 'rgb(227,98,102)';
             } else if (rowCounter == 1) {
@@ -513,21 +513,45 @@ for (let rowCounter = 0; rowCounter < 3; rowCounter++) {
 }
 drawTriangle(225, 33);
 
+/*Pozitív számok vizsgálatának kódja*/
+
 function logUntilSmall(array) {
-    const condition=" pozitiv";
-    const error=" megállította a logolást";
-    let i,message;
+    const condition = " pozitiv";
+    const error = " megállította a logolást";
+    let i, message;
     for (i = 0; i < array.length && array[i] > 0; i++) {
         console.log(array[i] + condition);
     }
     if (i === array.length) {
-        message = "minden elem"+condition;
+        message = "minden elem" + condition;
     } else {
         message = array[i] + error;
     }
     console.log(message);
 }
-const testArray=[1,3,4,7,10,11,2];
+const testArray = [1, 3, 4, 7, 10, 11, 2];
 logUntilSmall(testArray);
 testArray.push(-1);
 logUntilSmall(testArray);
+
+/*pozitív-negatív logikai vizsgálat kódja*/
+
+function isPositive(number) {
+    var condition = "positive";
+    var fail = "No!";
+    var message;
+    if (number > 0) {
+        message = "Yes, it's " + condition;
+    }
+    if (number < 0) {
+        message = fail;
+    }
+    console.log(message);
+}
+var test = 10;
+isPositive(test);
+test = -10;
+isPositive(test);
+
+console.log('Hello, a nevem ', myName);
+let myName = "Berry";

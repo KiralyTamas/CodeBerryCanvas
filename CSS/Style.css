@@ -29,10 +29,3 @@ body {
 	width: 450px;
 	height: 350px;
 }
-#pozitiv{
-	display: flex;
-	position: relative;
-	justify-content: center;
-	align-items: center;
-	font-size: xx-large;
-}
