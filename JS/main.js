@@ -515,6 +515,7 @@ drawTriangle(225, 33);
 
 /*Pozitív számok vizsgálatának kódja*/
 
+(function(){
 function logUntilSmall(array) {
     const condition = " pozitiv";
     const error = " megállította a logolást";
@@ -533,6 +534,7 @@ const testArray = [1, 3, 4, 7, 10, 11, 2];
 logUntilSmall(testArray);
 testArray.push(-1);
 logUntilSmall(testArray);
+})();
 
 /*pozitív-negatív logikai vizsgálat kódja*/
 (function(){
@@ -574,7 +576,7 @@ isPositive(test);
 test = -10;
 isPositive(test);
 })();
-
+/*Closure-be csomagolt fügvény kódja*/
 var greet = (function (){
     var greeting = "Hello ";
     function greetWithExcitement (name) {
@@ -583,4 +585,4 @@ var greet = (function (){
     }
     return greetWithExcitement;
   })();
-  greet("Berry"); // kiírja, hogy "Hello Berry!!!"
+  greet("Berry");
